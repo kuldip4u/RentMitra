@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="LtGrey">#9a9a9a</color>
+    <color name="black">#000000</color>
+    <color name="grey">#a1a1a1</color>
+    <color name="lt_black">#494949</color>
+    <color name="separator">#e1e1e1</color>
+    <color name="white">#FFFFFF</color>
+    <color name="background_grey">#EEEEEE</color>
+    <color name="search_bg">#E0E1E3</color>
+  
+    <color name="LtBlue">#0064b4</color>
+    <color name="transparent_color">@android:color/transparent</color>
+	<color name="btn_bg">#436FCB</color>
+	  <color name="DarkGrey">#1f1f1f</color>
+	
+    <color name="member_back_grey">#ededed</color>
+    <color name="lt_grey">#ececec</color>
+    <color name="blue_btn">#446FCB</color>
+   
+    
+</resources>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/header_rl"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:background="@color/LtBlue"
+    android:gravity="center" >
+
+    <ImageButton
+        android:id="@+id/img_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="5dp"
+        android:background="@null"
+        android:padding="5dp"
+        android:src="@drawable/ic_launcher" >
+
+    </ImageButton>
+
+    <TextView
+        android:id="@+id/tv_middle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_toLeftOf="@+id/img_right"
+        android:layout_toRightOf="@+id/img_left"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="APP"
+        android:textAllCaps="true"
+        android:ellipsize="end"      
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        android:textStyle="bold" 
+        android:singleLine="true">
+
+    </TextView>
+
+    <ImageView
+        android:id="@+id/logo_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center_vertical"
+        android:padding="5dp"
+        android:src="@drawable/ic_launcher" 
+        android:visibility="gone"
+        
+        />
+
+    <ImageButton
+        android:id="@+id/img_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="5dp"
+        android:background="@null"
+        android:padding="5dp"
+        android:src="@drawable/ic_launcher" >
+
+    </ImageButton>
+
+</RelativeLayout>
