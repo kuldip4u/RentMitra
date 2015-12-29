@@ -29,7 +29,7 @@ public class PaymentFragment extends BaseFragment {
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.splash_activity, null);
+		View view = inflater.inflate(R.layout.payment_fragment, null);
 		return view;
 	}
 
@@ -37,10 +37,10 @@ public class PaymentFragment extends BaseFragment {
 	public void onViewCreated(View view, Bundle savedInstanceState) {
 		super.onViewCreated(view, savedInstanceState);
 		
-		mEmailLl.setVisibility(View.INVISIBLE);
+		//mEmailLl.setVisibility(View.INVISIBLE);
 		//getAboutService();
 
-		Singleton.googleAnayticsScreen((RentMitraApplication) getActivity().getApplication(), getResources().getString(R.string.app_name));
+	//	Singleton.googleAnayticsScreen((RentMitraApplication) getActivity().getApplication(), getResources().getString(R.string.app_name));
 	}
 
 		/********* API Implementation *************/

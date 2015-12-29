@@ -22,8 +22,13 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.rentmitra.BaseFragment;
 import com.rentmitra.R;
 import com.rentmitra.Singleton;
+import com.rentmitra.invites.InviteFragment;
+import com.rentmitra.maintenance.MaintenanceFragment;
+import com.rentmitra.payment.PaymentFragment;
+import com.rentmitra.properties.PropertiesFragment;
 import com.widget.HeaderLayout;
 
 public class HomeActivity extends FragmentActivity implements OnClickListener{
@@ -40,6 +45,12 @@ public class HomeActivity extends FragmentActivity implements OnClickListener{
 	
 	boolean doubleBackToExitPressedOnce = false;
 
+	PropertiesFragment  propertyFr;
+	InviteFragment		inviteFr;
+	MaintenanceFragment maintenanceFr;
+	PaymentFragment  	paymentFr;
+	BaseFragment 		baseFragment;
+	
 	
 	@Override
 	protected void onCreate(Bundle arg0) {
@@ -200,6 +211,7 @@ public class HomeActivity extends FragmentActivity implements OnClickListener{
 		
 		ArrayList<String> sliderOptionsAL = new ArrayList<String>(Arrays.asList(sliderOptions));
 		OptionAdapter optionAdapter = new OptionAdapter(this);
+		optionAdapter.setList(sliderOptionsAL);
 		mSlideLV.addHeaderView(header, null, false);
 		mSlideLV.setAdapter(optionAdapter);
 		mSlideLV.setOnItemClickListener(NavigationDrawerItemClickListener);
@@ -254,26 +266,26 @@ public class HomeActivity extends FragmentActivity implements OnClickListener{
 		mFragmentManager = getSupportFragmentManager();
 		mFragmentTransaction = mFragmentManager.beginTransaction();
 		
-		switch (position) {/*
+		switch (position) {
 		case 1:
-			CardListFragment baseFragment = new CardListFragment();
-			mFragmentTransaction.replace(R.id.container_fragment, baseFragment);
-			mFragmentTransaction.commit();
+			baseFragment = new PropertiesFragment();
+			
 			break;
 
 		case 2:
-			AboutFragment aboutFragment = new AboutFragment();
-			mFragmentTransaction.replace(R.id.container_fragment, aboutFragment);
-			mFragmentTransaction.commit();
-			
+			baseFragment = new MaintenanceFragment();
 			break;
 			
 		case 3:
-			Intent mIntent = new Intent(this, CategoryActivity.class);
-			startActivityForResult(mIntent, AddCardActivity.CATEGORY);// Activity is started with requestCode 2  
+			baseFragment = new PaymentFragment();  
 			break;
 		
-		*/}
+		case 4:  baseFragment = new InviteFragment();	
+			
+		}
+		
+		mFragmentTransaction.replace(R.id.container_fragment, baseFragment);
+		mFragmentTransaction.commit();
 	} 
 
 	
