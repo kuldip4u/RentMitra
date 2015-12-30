@@ -19,5 +19,10 @@
     <color name="lt_grey">#ececec</color>
     <color name="blue_btn">#446FCB</color>
    
+    <!--........ APPLICAITON COLORS.........    -->
+    
+    <color name="et_grey">#7C7C7C</color>
+    <color name="pink">#FF366C</color>
+    <color name="lt_green">#03F5CB</color>
     
 </resources>

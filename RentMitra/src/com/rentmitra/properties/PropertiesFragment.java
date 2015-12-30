@@ -2,6 +2,10 @@ package com.rentmitra.properties;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,8 +14,9 @@ import android.widget.TextView;
 
 import com.rentmitra.BaseFragment;
 import com.rentmitra.R;
-import com.rentmitra.RentMitraApplication;
-import com.rentmitra.Singleton;
+import com.rentmitra.invites.InviteFragment;
+import com.rentmitra.maintenance.MaintenanceFragment;
+import com.rentmitra.payment.PaymentFragment;
 
 public class PropertiesFragment extends BaseFragment {
 
@@ -19,6 +24,9 @@ public class PropertiesFragment extends BaseFragment {
 	
 	private TextView mAboutTv;
 	private LinearLayout mEmailLl;
+	
+	private ViewPager viewPager;
+
 	
 	public static BaseFragment getInstance(Context context) {
 		if (null == mFragment) {
@@ -36,40 +44,47 @@ public class PropertiesFragment extends BaseFragment {
 	@Override
 	public void onViewCreated(View view, Bundle savedInstanceState) {
 		super.onViewCreated(view, savedInstanceState);
-		
-		//mEmailLl.setVisibility(View.INVISIBLE);
-		//getAboutService();
-
-	//	Singleton.googleAnayticsScreen((RentMitraApplication) getActivity().getApplication(), getResources().getString(R.string.app_name));
+		viewPager 	= (ViewPager) view.findViewById(R.id.pager);
 	}
+	
+	
+	/********* PAGER ADAPTER *************/
+
+	class SampleFragmentPagerAdapter extends FragmentPagerAdapter {
+
+		SampleFragmentPagerAdapter(FragmentManager fm) {
+			super(fm);
+		}
+
+		@Override
+		public Fragment getItem(int i) {
+//			return mTabsList.get(i).createFragment();
+			if(i==0)
+				return new PropertiesInnerFr();
+			if(i==1)
+				return new MaintenanceFragment();
+			if(i==2)
+				return new PaymentFragment();
+			else
+				return new InviteFragment();
+//			return new MessageFragment();
+		}
+
+		@Override
+		public int getCount() {
+			return 4;
+		}
+
+		
+		@Override
+		public CharSequence getPageTitle(int position) {
+			return "";
+		}
+
+	}
+	
+	
 
 		/********* API Implementation *************/
 
-	/*	private void getAboutService() {
-			
-			AboutRequest mAboutRequest = new AboutRequest(getActivity());
-			mAboutRequest.getAboutRequest();
-			
-			mAboutRequest.setRequestListener(new BaseRequest.RequestListener() {
-
-				@Override
-				public void onComplete(boolean success, Object data, int totalRecords) {
-					if (success) {
-						if (data != null) {
-							String value="";
-							try {
-								value = ((JSONObject)data).getString("about");
-							} catch (JSONException e) {	e.printStackTrace(); }
-							mAboutTv.setText(value);
-							mEmailLl.setVisibility(View.VISIBLE);
-						} else {
-							
-							DialogUtil.showOkDialog( getActivity(), "", getResources().getString(R.string.Record_not_found));
-
-						}
-					}
-				}
-			});
-
-		}*/
 }
