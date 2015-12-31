@@ -7,9 +7,16 @@
 
     <string name="please_wait">Please wait...</string>
     
-       <string name="to_reset">To reset your Password please enter\nyour email address</string>
-       <string name="submit">SUBMIT</string>
-        <string name="Record_not_found">Record not found</string>
-        <string name="Ok">OK</string>
+    <string name="to_reset">To reset your Password please enter\nyour email address</string>
+    <string name="submit">SUBMIT</string>
+    <string name="Record_not_found">Record not found</string>
+    <string name="Ok">OK</string>
+        
+	<!-- .......//... MENUS......///......  -->
+	    
+	    <string name="properties">Properties</string>
+        <string name="Maintenance">Maintenance</string>
+	    <string name="Payment">"Payment"</string>
+        <string name="Invite">Invite</string>
         
 </resources>

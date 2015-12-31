@@ -71,7 +71,8 @@ public class HomeActivity extends FragmentActivity implements OnClickListener{
 		setLeftNavigationSlider();
 		//setHeader(R.drawable.icon_menu, getString(R.string.app_name), R.drawable.btn_blue_plus_normal);
 		mHeaderLayout.setListenerITI(this, null, this);
-	
+		
+		switchFragment(1, "");
 		
 		/*mFragmentManager = getSupportFragmentManager();
 		mFragmentTransaction = mFragmentManager.beginTransaction();
@@ -167,38 +168,7 @@ public class HomeActivity extends FragmentActivity implements OnClickListener{
 
 	private void setLeftNavigationSlider() {
 
-		/*int width = (int) (getResources().getDimension(R.dimen.space_mid10) * 16);
-		ListView.LayoutParams rlp = new ListView.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, width);
-		View header = (View) getLayoutInflater().inflate(R.layout.user_info_view, null);
-		header.setLayoutParams(rlp);
-		
-		String[] sliderOptions = new String[]{"Home", "About Owner", "Manage Category"};
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        mSlideLV = (ListView) findViewById(R.id.left_drawer);
-        mSlideLV.addHeaderView(header, null, false);
-        
-        OptionAdapter optionAdapter = new OptionAdapter(this);
-        mSlideLV.setAdapter(optionAdapter);
-        List<String> list = Arrays.asList(sliderOptions); 
-        optionAdapter.setList(list);
-        
-		mSlideLV.setOnItemClickListener(new OnItemClickListener() {
 
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				
-				new Handler().postDelayed(new Runnable() {
-					@Override
-					public void run() {
-						if (mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
-							mDrawerLayout.closeDrawers();
-						}
-					}
-				}, 300);
-				setFragment(position);
-			}
-		});	
-	*/
 	
 		int width = (int) (getResources().getDimension(R.dimen.space_mid10) * 16);
 		ListView.LayoutParams rlp = new ListView.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, width);

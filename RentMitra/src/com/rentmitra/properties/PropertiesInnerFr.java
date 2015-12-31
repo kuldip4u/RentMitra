@@ -37,6 +37,9 @@ public class PropertiesInnerFr extends BaseFragment {
 	public void onViewCreated(View view, Bundle savedInstanceState) {
 		super.onViewCreated(view, savedInstanceState);
 		
+		TextView tv = (TextView)view.findViewById(R.id.PropertyTv);
+		tv.setText("Properties");
+		
 		//mEmailLl.setVisibility(View.INVISIBLE);
 		//getAboutService();
 
